@@ -4,7 +4,6 @@
 // @version      0.1
 // @description  matchにお好みのMisskeyインスタンスを入力してください
 // @author       kaonasi_biwa
-// @match        https://mi.ablaze.one/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=misskey.io
 // @grant        none
 // ==/UserScript==
