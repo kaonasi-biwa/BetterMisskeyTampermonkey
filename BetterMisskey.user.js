@@ -27,7 +27,8 @@ function observerFunc(){
     }
 }
 function eventClick(event){
-    if(event.target.tagName != "IMG" && event.target.parentElement.tagName != "BUTTON"){
+    console.log(event.target)
+    if(event.target.tagName != "IMG" && event.target.parentElement.tagName != "BUTTON" && event.target.tagName != "A" && event.target.tagName != "SPAN" && event.target.tagName != "LI"){
               event.currentTarget.parentElement.querySelector(`header [href^="/notes/"]`).click()
 
     }event.stopPropagation()
