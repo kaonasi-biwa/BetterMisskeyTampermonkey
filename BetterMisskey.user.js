@@ -26,12 +26,11 @@ function observerFunc(){
     }
 }
 function eventClick(event){
-    console.log(event.target)
-    if(event.target.tagName != "IMG" && event.target.tagName != "BUTTON" && event.target.parentElement.tagName != "BUTTON" && event.target.tagName != "A" && event.target.tagName != "SPAN" && event.target.tagName != "LI"){
-              event.currentTarget.parentElement.querySelector(`header [href^="/notes/"]`).click()
-
-    }event.stopPropagation()
-
+    console.log(event.target.tagName)
+    if(event.target.tagName == "ARTICLE" || event.target.tagName == "DIV"){
+        event.currentTarget.parentElement.querySelector(`header [href^="/notes/"]`).click()
+    }
+    event.stopPropagation()
 }
 
 (function() {
