@@ -27,9 +27,11 @@ function observerFunc(){
     }
 }
 function eventClick(event){
-    console.log(event.currentTarget)
-event.currentTarget.parentElement.querySelector(`header [href^="/notes/"]`).click()
-    event.stopPropagation()
+    if(event.target.tagName != "IMG" && event.target.parentElement.tagName != "BUTTON"){
+              event.currentTarget.parentElement.querySelector(`header [href^="/notes/"]`).click()
+
+    }event.stopPropagation()
+
 }
 
 (function() {
