@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  matchにお好みのMisskeyインスタンスを入力してください
+// @version      0.1.1
+// @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
+// @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=misskey.io
+// @updateURL    https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/raw/main/BetterMisskey.user.js
+// @downloadURL  https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/raw/main/BetterMisskey.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -27,7 +30,7 @@ function observerFunc(){
 }
 function eventClick(event){
     console.log(event.target.tagName)
-    if(event.target.tagName == "ARTICLE" || event.target.tagName == "DIV"){
+    if(event.target.tagName == "ARTICLE" || event.target.tagName == "DIV" || event.target.tagName == "FOOTER" || event.target.tagName == "HEADER"){
         event.currentTarget.parentElement.querySelector(`header [href^="/notes/"]`).click()
     }
     event.stopPropagation()
