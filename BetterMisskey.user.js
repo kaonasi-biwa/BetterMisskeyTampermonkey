@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
 // @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
@@ -9,6 +9,12 @@
 // @updateURL    https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/raw/main/BetterMisskey.user.js
 // @downloadURL  https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/raw/main/BetterMisskey.user.js
 // @grant        none
+// @match        *://mi.ablaze.one/*
+// @match        *://misskey.io/*
+// @match        *://misskey.04.si/*
+// @match        *://ktnfm.com/*
+// @match        *://otoya.space/*
+// @match        *://misskey.sda1.net/*
 // ==/UserScript==
 
 let observer = new MutationObserver(observerFunc)
