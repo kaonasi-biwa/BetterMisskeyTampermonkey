@@ -2,7 +2,7 @@ name: Build
 on:
   workflow_dispatch:
     inputs:
-      mar-url:
+      version:
         type: string
         required: true
         description: Version
@@ -19,8 +19,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: BetterMisskeyTampermonkey ${{ github.ref }}
+        tag_name: ${{ inputs.version }}
+        release_name: BetterMisskeyTampermonkey ${{ inputs.version }}
         draft: false
         prerelease: false
     - name: Upload Release Asset
