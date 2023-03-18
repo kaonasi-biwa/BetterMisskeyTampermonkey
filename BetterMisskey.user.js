@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      0.1.3
 // @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
 // @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=misskey.io
-// @updateURL    https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/raw/main/BetterMisskey.user.js
-// @downloadURL  https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/raw/main/BetterMisskey.user.js
+// @updateURL    https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/releases/latest/download/BetterMisskey.user.js
+// @downloadURL  https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey/releases/latest/download/BetterMisskey.user.js
 // @grant        none
 // @match        *://mi.ablaze.one/*
 // @match        *://misskey.io/*
