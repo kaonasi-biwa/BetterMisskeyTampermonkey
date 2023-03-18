@@ -1,6 +1,6 @@
 # BetterMisskeyTampermonkey
 Tampermonkey用のコードです(そうじゃなくてもできるとは思う)  
-BetterMisskey.user.jsを使用してください  
+ReleaseのBetterMisskey.user.jsを使用してください  
 ## 使用できるインスタンス (Tampermonkeyの場合)
 - mi.ablaze.one  
 - misskey.io  
