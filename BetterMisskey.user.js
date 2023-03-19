@@ -16,6 +16,7 @@
 // @match        *://otoya.space/*
 // @match        *://misskey.sda1.net/*
 // @match        *://blog.ablaze.one/*
+// @match        *://misskey.dev/*
 // ==/UserScript==
 
 let observer = new MutationObserver(observerFunc)
