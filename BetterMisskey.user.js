@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1.6
+// @version      0.1.7
 // @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
 // @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
@@ -17,7 +17,6 @@
 // @match        *://misskey.sda1.net/*
 // @match        *://blog.ablaze.one/*
 // @match        *://misskey.dev/*
-// @match        *://sushi.ski/*
 // ==/UserScript==
 
 let observer = new MutationObserver(observerFunc)
@@ -36,7 +35,7 @@ function observerFunc(){
         if(elem.parentElement.querySelector(`header [href^="/notes/"]`) != null) elem.parentElement.onclick = eventClick
         elem.classList.add("misskeyKaonasi")
     }
-    let followIcons = document.querySelectorAll(".mk-following-or-followers .avatar:not(.misskeyKaonasi)")
+    let followIcons = document.querySelectorAll(".avatar:not(.misskeyKaonasi):not(a > *)")
     for(let elem of followIcons){
     elem.onclick = avatarClick
         elem.classList.add("misskeyKaonasi")
@@ -51,7 +50,7 @@ function eventClick(event){
 }
 
 function avatarClick(event){
-event.currentTarget.parentElement.querySelector("a.name").click()
+event.currentTarget.parentElement.querySelector("a.name")?.click()
 }
 
 (function() {
