@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1.7
+// @version      0.1.8
 // @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
 // @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
@@ -19,10 +19,13 @@
 // @match        *://misskey.dev/*
 // ==/UserScript==
 
+
 let observer = new MutationObserver(observerFunc)
 const setObs = ()=>{
     if(document.querySelector("#misskey_app")){
         observer.observe(document.querySelector("#misskey_app"),{childList: true,subtree: true})
+    }else if(document.querySelector("#app")){
+        observer.observe(document.querySelector("#app"),{childList: true,subtree: true})
     }
     else{
         window.setTimeout(setObs,1000)
