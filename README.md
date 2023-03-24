@@ -1,6 +1,12 @@
 # BetterMisskeyTampermonkey
 Tampermonkey用のコードです(そうじゃなくてもできるとは思う)  
 ReleaseのBetterMisskey.user.jsを使用してください  
+## デバッグ済みインスタンス
+- mi.ablaze.one  
+- misskey.io  
+- misskey.04.si  
+- misskey.sda1.net  
+- misskey.dev  
 ## 使用できるインスタンス (Tampermonkeyの場合)
 - mi.ablaze.one  
 - misskey.io  
@@ -8,6 +14,7 @@ ReleaseのBetterMisskey.user.jsを使用してください
 - ktnfm.com  
 - otoya.space  
 - misskey.sda1.net  
+- misskey.dev  
 
 それ以外の場合も、`// @match        *://<インスタンスのドメイン(misskey.ioみたいな)>/*`を追加することで使用することができます  
 (報告していただけるとありがたいです)
