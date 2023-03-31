@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1.8
+// @version      0.1.9
 // @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
 // @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
@@ -17,15 +17,14 @@
 // @match        *://misskey.sda1.net/*
 // @match        *://blog.ablaze.one/*
 // @match        *://misskey.dev/*
+// @match        *://submarin.online/*
 // ==/UserScript==
 
 
 let observer = new MutationObserver(observerFunc)
 const setObs = ()=>{
-    if(document.querySelector("#misskey_app")){
-        observer.observe(document.querySelector("#misskey_app"),{childList: true,subtree: true})
-    }else if(document.querySelector("#app")){
-        observer.observe(document.querySelector("#app"),{childList: true,subtree: true})
+    if(document.querySelector("#misskey_app,#app")){
+        observer.observe(document.querySelector("#misskey_app,#app"),{childList: true,subtree: true})
     }
     else{
         window.setTimeout(setObs,1000)
@@ -38,11 +37,14 @@ function observerFunc(){
         if(elem.parentElement.querySelector(`header [href^="/notes/"]`) != null) elem.parentElement.onclick = eventClick
         elem.classList.add("misskeyKaonasi")
     }
-    let followIcons = document.querySelectorAll(".avatar:not(.misskeyKaonasi):not(a > *)")
-    for(let elem of followIcons){
-    elem.onclick = avatarClick
+    if(location.host != "submarin.online"){
+      let followIcons = document.querySelectorAll(".avatar:not(.misskeyKaonasi):not(a > *)")
+      for(let elem of followIcons){
+      elem.onclick = avatarClick
         elem.classList.add("misskeyKaonasi")
+      }
     }
+    
 }
 function eventClick(event){
     console.log(event.target.tagName)
