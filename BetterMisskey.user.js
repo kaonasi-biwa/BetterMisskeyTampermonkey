@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Misskey
 // @namespace    http://tampermonkey.net/
-// @version      0.1.12
+// @version      0.1.13
 // @description  include等にお好みのMisskeyインスタンスを入力して利用してください
 // @author       kaonasi_biwa
 // @homepage     https://github.com/kaonasi-biwa/BetterMisskeyTampermonkey
@@ -37,6 +37,11 @@ function observerFunc(){
         if(elem.parentElement.querySelector(`header [href^="/notes/"]`) != null) elem.parentElement.onclick = eventClick
         elem.classList.add("misskeyKaonasi")
     }
+    let artciclesAtags = document.querySelectorAll(`article header+div a:not(.misskeyKaonasi)`)
+    for(let elem of icons){
+        elem.parentElement.onclick = eventCancel
+        elem.classList.add("misskeyKaonasi")
+    }
     if(location.host != "submarin.online"){
       let followIcons = document.querySelectorAll(":is(.avatar,span[title]):not(.misskeyKaonasi):not(a > *)")
       for(let elem of followIcons){
@@ -58,7 +63,7 @@ function eventCancel(event){
 }
 
 function avatarClick(event){
-(event.currentTarget.parentElement.querySelector("a.name") ?? event.currentTarget.parentElement.parentElement.querySelector(`a[href^="/@"]`))?.click()
+(event.currentTarget.parentElement.querySelector("a.name") ?? event.currentTarget.parentElement.querySelector(`a[href^="/@"]`))?.click()
 }
 
 (function() {
