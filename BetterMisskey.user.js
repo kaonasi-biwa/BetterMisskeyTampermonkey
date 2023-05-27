@@ -37,11 +37,6 @@ function observerFunc(){
         if(elem.parentElement.querySelector(`header [href^="/notes/"]`) != null) elem.parentElement.onclick = eventClick
         elem.classList.add("misskeyKaonasi")
     }
-    let artciclesAtags = document.querySelectorAll(`article header+div a:not(.misskeyKaonasi)`)
-    for(let elem of icons){
-        elem.parentElement.onclick = eventCancel
-        elem.classList.add("misskeyKaonasi")
-    }
     if(location.host != "submarin.online"){
       let followIcons = document.querySelectorAll(":is(.avatar,span[title]):not(.misskeyKaonasi):not(a > *)")
       for(let elem of followIcons){
