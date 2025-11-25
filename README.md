@@ -17,6 +17,8 @@ ReleaseのBetterMisskey.user.jsを使用してください
 - misskey.sda1.net  
 - misskey.dev  
 - submarin.online
+- misskey.flowers
+- voskey.icalo.net
 
 それ以外の場合も、`// @match        *://<インスタンスのドメイン(misskey.ioみたいな)>/*`を追加することで使用することができます  
 (報告していただけるとありがたいです)

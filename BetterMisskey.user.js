@@ -15,9 +15,10 @@
 // @match        *://ktnfm.com/*
 // @match        *://otoya.space/*
 // @match        *://misskey.sda1.net/*
-// @match        *://blog.ablaze.one/*
 // @match        *://misskey.dev/*
 // @match        *://submarin.online/*
+// @match        *://misskey.flowers/*
+// @match        *://voskey.icalo.net/*
 // ==/UserScript==
 
 let articleClick = true; //ノートクリックでTwitterのように拡大表示できるようにする
