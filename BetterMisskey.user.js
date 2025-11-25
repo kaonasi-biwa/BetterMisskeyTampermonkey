@@ -82,7 +82,7 @@ function rnClick(event){
     event.preventDefault()
 }
 
-const setObs = () = >{
+const setObs = () => {
     if(!observerRoot && document.querySelector("#misskey_app,#app")){
         observerRoot = document.querySelector("#misskey_app,#app")
     }
