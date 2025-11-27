@@ -8,6 +8,9 @@ on:
         required: true
         description: Version
 
+permissions:
+  contents: write
+
 jobs:
   make-release:
     runs-on: ubuntu-latest
