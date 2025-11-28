@@ -34,8 +34,9 @@ function observerFunc() {
     if (articleClick) {
         let icons = document.querySelectorAll(`[tabindex] > :is(article,div) [href^="/@"][title]:not(.misskeyKaonasi)`)
         for (let elem of icons) {
-            if (elem.parentElement.querySelector(`header [href^="/notes/"]`) != null)
+            if (elem.parentElement.querySelector(`header [href^="/notes/"]`) != null) {
                 elem.parentElement.onclick = eventClick
+            }
             elem.classList.add("misskeyKaonasi")
         }
     }
@@ -43,6 +44,7 @@ function observerFunc() {
         let followIcons = document.querySelectorAll(":is(.avatar,span[title]):not(.misskeyKaonasi):not(a > *)")
         for (let elem of followIcons) {
             elem.onclick = avatarClick
+            elem.style.cursor = "pointer"
             elem.classList.add("misskeyKaonasi")
         }
     }
