@@ -62,6 +62,7 @@ function observerFunc() {
     observer.observe(observerRoot, observerConfig)
 }
 function eventClick(event) {
+    if (event.target.tagName == "SUMMARY") return
     if (event.target.tagName == "ARTICLE" || event.target.tagName == "DIV" || event.target.tagName == "FOOTER" || event.target.tagName == "HEADER") {
         event.currentTarget.querySelector(`header [href^="/notes/"]`).click()
     }
