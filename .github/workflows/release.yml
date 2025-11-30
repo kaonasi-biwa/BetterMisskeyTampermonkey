@@ -1,4 +1,5 @@
 name: Build
+
 on:
   workflow_dispatch:
     inputs:
@@ -7,29 +8,19 @@ on:
         required: true
         description: Version
 
+permissions:
+  contents: write
 
 jobs:
   make-release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ inputs.version }}
-        release_name: BetterMisskeyTampermonkey ${{ inputs.version }}
+        name: BetterMisskeyTampermonkey ${{ inputs.version }}
         draft: false
         prerelease: false
-    - name: Upload Release Asset
-      id: upload-release-asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: BetterMisskey.user.js
-        asset_name: BetterMisskey.user.js
-        asset_content_type:  	text/javascript
+        files: BetterMisskey.user.js
